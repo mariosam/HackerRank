@@ -43,12 +43,12 @@ class DecompondoNumeros {
 
     $arr = decompNumbers($maxDigit, $sumDigit);
 
-    if ( count($arr)>0 ) {   
+    if ( $arr === null ) {
+        fwrite($fptr, "null" . "\n");   
+    } else {
         foreach ($arr as &$num) {
             fwrite($fptr, $num . "\n");   
         }
-    } else {
-        fwrite($fptr, "null" . "\n");   
     }
 
     fclose($fptr);
